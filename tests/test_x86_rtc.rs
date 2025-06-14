@@ -18,8 +18,8 @@ fn rtc_returns_reasonable_timestamp() {
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     {
         // The timestamp should be >= 2000-01-01 and < 2100-01-01
-        const YEAR_2000: u64 = 946684800;      // 2000-01-01T00:00:00Z
-        const YEAR_2100: u64 = 4102444800;     // 2100-01-01T00:00:00Z
+        const YEAR_2000: u64 = 946684800; // 2000-01-01T00:00:00Z
+        const YEAR_2100: u64 = 4102444800; // 2100-01-01T00:00:00Z
         assert!(
             (YEAR_2000..YEAR_2100).contains(&ts),
             "RTC returned implausible value: {ts}"
