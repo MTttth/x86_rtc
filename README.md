@@ -3,8 +3,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/x86_rtc)](https://crates.io/crates/x86_rtc)
 [![Docs.rs](https://docs.rs/x86_rtc/badge.svg)](https://docs.rs/x86_rtc)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/oscomp/arceos)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/oscomp/starry-next)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/arceos-org/x86_rtc)
 
 A **no\_std** CMOS–based *Real‑Time Clock* (RTC) driver for **x86 / x86_64** PCs and QEMU guests.  
 It offers a safe, minimal wrapper around the legacy CMOS I/O ports (`0x70`/`0x71`) so you can **read _or_ set the wall‑clock time** as a UNIX timestamp.
