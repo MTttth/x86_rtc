@@ -33,7 +33,6 @@ jobs:
         fi
     - name: Unit test
       if: ${{ matrix.targets == 'x86_64-unknown-linux-gnu' }}
-      if: matrix.target == 'x86_64-unknown-linux-gnu'
       run: |
         if [ "${{ matrix.rust-toolchain }}" = "nightly" ]; then
           cargo test --features nightly-extra -- --nocapture
