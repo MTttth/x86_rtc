@@ -41,7 +41,7 @@ fn rtc_returns_reasonable_timestamp() {
 #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 #[test]
 fn write_then_read_back() {
-	if unsafe { libc::ioperm(0x70, 2, 1) } != 0 {
+    if unsafe { libc::ioperm(0x70, 2, 1) } != 0 {
         eprintln!("skip RTC write test: no ioperm");
         return;
     }
