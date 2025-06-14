@@ -26,8 +26,7 @@ jobs:
     - name: Build
       run: |
         if [ "${{ matrix.rust-toolchain }}" = "nightly" ]; then
-          cargo build --target ${{ matrix.target }} \
-                      --features nightly-extra --all-features
+          cargo build --target ${{ matrix.targets }} --all-features
         else
           cargo build --target ${{ matrix.target }}
         fi
@@ -35,7 +34,7 @@ jobs:
       if: ${{ matrix.targets == 'x86_64-unknown-linux-gnu' }}
       run: |
         if [ "${{ matrix.rust-toolchain }}" = "nightly" ]; then
-          cargo test --features nightly-extra -- --nocapture
+          cargo test --target ${{ matrix.targets }} -- --nocapture
         else
           cargo test -- --nocapture
         fi
