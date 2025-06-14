@@ -274,3 +274,9 @@ fn seconds_from_date(year: u16, month: u8, day: u8, hour: u8, minute: u8, second
     let minutes_since_epoch = hours_since_epoch * 60 + u64::from(minute);
     minutes_since_epoch * 60 + u64::from(second)
 }
+#[cfg(all(test, any(target_arch = "x86", target_arch = "x86_64")))]
+mod _port_stub_for_tests {
+    pub(super) fn read_cmos_register(_reg: u8) -> u8 { 0 }
+    pub(super) fn write_cmos_register(_reg: u8, _val: u8) {}
+}
+
