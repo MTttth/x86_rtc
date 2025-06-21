@@ -1,10 +1,8 @@
 //! tests/test_x86_rtc.rs
 //! Integration tests for x86_rtc that are safe on CI.
 //
-// --------------- helper：检测端口访问权限 -----------------
 #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 fn have_cmos_io_priv() -> bool {
-    // ioperm(0x70, 2, 1) → 成功返回 0
     unsafe { libc::ioperm(0x70, 2, 1) == 0 }
 }
 
